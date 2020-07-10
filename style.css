@@ -1,0 +1,991 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* scroll bar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255, 255, 255) rgb(0, 140, 255);
+  }
+  
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(1, 159, 250);
+    border-radius: 20px;
+    border: 0px solid rgb(0, 132, 255);
+  }
+
+  /* scroll bar end */
+html{
+    scroll-behavior: smooth;
+}
+
+/* navbar start */
+.nav_bar{
+    background-color: rgba(0, 0, 0, 0.719);
+}
+
+.nav-item{
+    text-decoration: none;
+    border-bottom: 2px solid rgb(0, 140, 255) ;
+    border-width: 0;
+    transition: 0.3s ease-in;
+    padding-bottom: 10px;
+}
+.link{
+    transition: 3s ease-in;
+    border-width: 0;
+    /* border-bottom: 2px solid rgb(0, 119, 255); */
+}
+.links:hover{
+    color: rgb(0, 119, 255);
+    
+    text-decoration: none;
+    animation: linkhover 1s ;
+    
+    
+}
+
+@keyframes linkhover{
+    from{
+        border: 0;
+    }
+    to{
+        border-bottom: 2px solid rgb(255, 255, 255);
+    }
+}
+.active{
+    border-bottom: 2px solid rgb(255, 255, 255);
+    /* transition: 1s ease-in; */
+}
+
+/* navbar end */
+
+/* home slides start */
+.home-slide{
+    height: 100vh;
+    width:100%;
+    overflow: hidden;
+    
+}
+
+.hometext{
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hometext h5{
+    position: relative;
+    transform: translateY(40vh);
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+.hometext p{
+    position: relative;transform: translateY(45vh);font-size: 20px;font-weight: 350;color: white;
+}
+
+@media screen and (max-width :435px){
+    .hometext h5{
+        transform: translateY(35vh);
+        font-size: 30px;
+    }
+    .hometext p{
+        transform: translateY(37vh);
+        font-size: 18px;
+    }
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.5),rgba(0,0,0,0.8));
+}
+
+.image1,.image2,.image3{
+    height: 100%;
+    width: 100%;
+    background-image:linear-gradient(145deg,#000000e3,#070707d7), url('./assets/iitropar2.webp');
+    background-size: cover;
+    overflow: hidden;
+   background-attachment: fixed;
+   background-position: center;
+}
+
+.image2{
+    background-image:linear-gradient(145deg,#000000da,#070707d8), url('./assets/iitropar1.jpg');
+}
+
+.image3{
+    background-image:linear-gradient(145deg,#000000dc,#070707dc), url('./assets/iitropar3.jpg');
+}
+
+/* home slides end */
+
+/* board banners */
+
+.about{
+    
+    background-color: white;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.abouthead{
+    margin: 60px 0 30px 0;
+    color: #000000;
+    font-weight: 900;
+}
+
+.abouthead::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #2B86C5;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #2B86C5;
+}
+/* here is card flip */
+.aboutcards{
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 100%; */
+}
+
+.card{
+    cursor: pointer;
+    width: 200px;
+    height: 250px;
+    margin: 20px 10px ;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 8px 2px rgba(0, 0, 0, 0.534);
+-webkit-box-shadow: 10px 10px 18px 1px rgba(0,0,0,0.82);
+-moz-box-shadow: 10px 10px 18px 1px rgba(0,0,0,0.82);
+  }
+  .front,.back{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+    border-radius: 10px;    
+    
+    /* background-color: #21D4FD; */
+    background-image: linear-gradient(19deg, #2e84d4e5 0%, #2B86C5 100%),url('');
+    
+  }
+  .front img{
+    height: 130px;
+    width: 130px;
+    margin: 20px 0;
+  }
+  .front h1{
+      color: white;
+  }
+  .front{
+    transform: perspective(600px) rotateY(0deg);
+  }
+  .back{
+    background: #f1f1f1;
+    transform: perspective(600px) rotateY(180deg);
+  }
+  .back-content{
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+  }
+  .back-content h1{
+    font-size: 30px;
+    font-weight: normal;
+    width: 100%;
+    padding: 30px 10px 40px 10px;
+  }
+  
+  .back-content a{
+      border: 2px white solid;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      
+      background-color: #3b88bb;
+     /* / background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%); */
+      
+
+  }
+
+  .back-content a:hover{
+      background-color: #0095ff;
+    /* background-image: linear-gradient(19deg, #B721FF 0%,  #21D4FD 100%); */
+  }
+  .card:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+  }
+  .card:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+  }
+
+  /* board banner ends */
+
+  /* <dean says some */
+  
+  .dean{
+      min-height: 450px;
+      /* background-color: greenyellow; */
+      margin-top: 40px;
+      width: 100%;
+      padding-bottom: 40px;
+      background-attachment: fixed;
+      background-position: center;
+      /* background-color: #21D4FD; */
+      background-image: linear-gradient(19deg, #050505c5 0%,rgba(7, 7, 7, 0.836) 100%),url('./assets/iitropar1.jpg');
+      
+  }
+  .deancontent{
+      min-height: 450px;
+      background-color: white;
+      position: relative;
+      top: -30px;
+      border-radius: 20px;
+      box-shadow: 10px -10px 18px  rgba(0,0,0,0.82);
+      margin: 0 auto;
+      width: 90%;
+      
+  }
+  .deanhead{
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+  }
+  .deanhead::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #2B86C5;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #2B86C5;
+    
+}
+  .deanhead h1{
+      padding-top: 20px;
+      margin-bottom: 20px;
+      font-size: 40px;
+      font-weight: 500;
+    
+  }
+
+  .content{
+      display: flex;
+      flex-wrap: wrap-reverse;
+  }
+  .deansays{
+      width: 60%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  @media screen and (max-width:768px){
+      .deansays{
+          width: 80%;
+          text-align: center;
+          
+      }
+  }
+  .deansays p{
+      padding-top: 40px;
+      font-size: 20px;
+  }
+
+  .deanimage{
+      padding-top: 10px;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+  }
+  .deanimage img{
+      height: 100%;
+      width: 100%;
+      border-radius: 20px;
+  }
+
+  /* dean says end */
+
+
+  /* Achievements */
+  .achievements{
+      display:flex;
+      flex-wrap: wrap;
+      min-height: 500px;
+      background-color: rgba(221, 221, 221, 0.979);
+      margin: 40px 0;
+      padding-top: 40px;
+      position: relative;
+      
+  }
+
+  .achievements::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 140, 255);
+    transform: rotateZ(5deg) scaleX(0.8) scaleY(1.1);   
+    z-index: -5;
+    overflow: hidden;
+  }
+  
+  .achievehead{
+      width: 600px;
+      padding:0 20px;
+      margin: 0 auto;
+      text-align: center;
+  }
+  .achievehead h1::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #2B86C5;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #2B86C5;
+    position: relative;
+    left: -150px;
+    top: 25px;
+    
+}
+  .achievehead h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .achievehead div {
+      text-align: left;
+      font-size: 18px;
+      color: rgb(58, 58, 58);
+  }
+  .achievehead div p i{
+      color: #21D4FD;
+      font-size: 30px;
+  }
+  .achieveslides{
+      width: 500px;
+      height: 400px;
+      margin: 0 auto;
+      padding: 40px 10px;
+      
+      overflow: hidden;
+  }
+
+  .image{
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      
+
+  }
+
+  /* Achievements end */
+
+  /* conaactform start */
+
+  .contact{
+    
+    /* background-image:  */
+    background-size: cover;
+    margin: 30px 0 30px 0;
+    text-align: center;
+    background-attachment: fixed;
+    padding: 40px 0;
+    /* box-shadow: 10px -10px 18px  rgba(0,0,0,0.82); */
+}
+.contactform{
+    width: 80%;
+    border-radius: 30px;
+    margin: 20px auto 0 auto;
+    padding-top: 30px ;
+    background-image: linear-gradient(19deg, #82e6ff 0%, #4a9dfd 100%);
+    box-shadow: 10px 10px 18px  rgba(0,0,0,0.4);
+}
+/* inset 10px 10px 26px  rgba(255,255,255,1) */
+.contactform h1{
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: 500;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.contactform h1::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #ffffff;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #ffffff;
+    position: relative;
+    left: -120px;
+    top: 25px;
+    
+}
+.contactform div div input{
+    width: 50%;
+    height: 40px;
+    margin: 20px 5px;
+    border-radius: 20px;
+    border: 0   ;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    padding-left: 3px;
+    box-shadow: 5px 5px 18px  rgba(0,0,0,0.5),inset 6px 6px 16px 7px rgba(255,255,255,1);
+}
+
+.fas{
+    font-size: 30px;
+    color: white;
+    height: 40px;
+    width: 40px;
+    margin: 2px 2px ;
+}
+.btnsub{
+    width:50px;
+    height: 50px;
+    background-color: white;
+    border: 0;
+    border-radius: 50%;
+    color: #6c5ce7;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 0px;
+    margin: 15px 0 30px 0;
+    text-align: center;
+    box-shadow: 5px 5px 18px  rgba(0,0,0,0.3),inset 6px 6px 16px 7px rgba(255,255,255,1);
+
+}
+.plane{
+    color:#6c5ce7;
+    height: 40px;
+    width: 40px;
+    margin: 13px 5px 5px 0px;
+}
+
+
+
+/* navbar responsive */
+.nav-colored { background-color:rgb(2, 141, 255); color: black; box-shadow:0 10px 15px rgba(3, 3, 3, 0.8);}
+.nav-transparent { background-color:transparent; color: white;}
+
+
+/* STudent council */
+
+.council{
+    
+    padding: 30px 0;
+    width: 90%;
+    margin: 0 auto;
+    
+
+}
+.councilhead{
+    z-index: 5;
+    /* position: relative; */
+    /* left: 50%; */
+    text-align: center;
+    
+}
+.councilhead h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    z-index: 5;
+    
+    padding-left: 40px; 
+    /* position: absolute; */
+    /* position: relative; */
+    /* left: 50%; */
+    
+    
+}
+
+.councilhead h1::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #2B86C5;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #2B86C5;
+    position: relative;
+    left: -150px;
+    top: 25px;
+    
+}
+
+.councilmembers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.member{
+    width: 350px;
+    height: 400px;
+    overflow: hidden;
+    border: 0px grey solid;
+    position: relative;
+    margin: 30px 0;
+    background-color: rgb(231, 230, 230);
+    box-shadow:10px 10px 15px rgba(3, 3, 3, 0.6);
+    text-align: center;
+}
+
+.memberimg img{
+    width: 300px;
+    height: 300px;
+    padding: 30px ;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(6, 152, 250, 0.897);
+    transform: translateY(-100%) scale(1);
+    transition: .8s ease-in-out;
+    z-index: 2;
+}
+.member:hover .overlay{
+    transform: translateY(0) scale(1);
+}
+
+.socialmedia{
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    height: 70%;
+    margin-top: 70px;
+    
+}
+
+.socialmedia a{
+    text-decoration: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.socialmedia a i{
+    color: rgb(0, 132, 255);
+    font-size: 40px;
+    position: relative;
+    top: 20px;
+    left: -10px;
+
+
+}
+.socialmedia a:hover i{
+    color: rgb(0, 47, 134);
+}
+.memberinfo h3{
+    color: rgb(0, 119, 255);
+    font-weight: 400;
+}
+
+
+/* Stident council end */
+
+
+@media screen and (max-width: 777px){
+    .councilmembers{
+        justify-content: center;
+        transform: translateX(0%);
+    }
+    .newsbox{
+        justify-content: space-around;
+    }
+
+    .contactform{
+        width: 100%;
+    }
+    .contactform h1{
+        font-size:  ;
+    }
+    .contactform div div input{
+        width: 90%;
+    }
+    
+
+}
+
+@media screen and (max-width: 400px){
+    .council{
+        width: 100%;
+    }
+    .councilhead{
+        padding-left: 0;
+    }
+    .councilhead h1{
+        /* font-size: 30px; */
+        /* width: 200px; */
+}
+
+/* news */
+
+.news{
+    width: 100%;
+}
+
+.newshead h1{
+    padding-left: 40px;
+}
+
+    .contactform h1{
+        padding-left: 40px;
+    }
+    .contactform{
+        width: 90%;
+    }
+    .achievements::before{
+        transform: scaleY(1.04) scaleX(0.63) rotateZ(2deg);
+    }
+}
+
+
+/* recent news */
+.news{
+    
+    min-height: 500px;
+    background-color: rgb(255, 255, 255);
+    margin: 80px auto;
+    padding-top: 40px;
+    /* position: relative; */
+    /* text-align: center; */
+
+    
+}
+
+.newshead{
+    text-align: center;
+}
+
+.newshead h1{
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    z-index: 5;
+    padding-left:  ;
+}
+
+.newshead h1::after{
+    content: 'hello   ';
+    width: 150px;
+    height: 10px;
+    position: relative;
+    color: #2B86C5;
+    font-size: 3px;
+    letter-spacing: 8px;
+    background-color: #2B86C5;
+    position: relative;
+    left: -150px;
+    top: 25px;
+    
+}
+
+.newsbox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+/* footer */
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373;
+  font-size: 20px;
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+/* footer end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.footer{
+    min-height: 230px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap-reverse;
+    color: rgb(255, 255, 255);
+    justify-content: space-around;
+}
+.contactinfo,.social{
+    width: 300px;
+    font-size: 10px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    /* background-color: yellow; */
+}
+
+.contactinfo div a{
+    font-weight: normal;
+    font-size: 20px;
+    color: white;
+    padding: 15px 0;
+    
+}
+.conhead,.social h2{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.contactinfo .fan{
+    height: 15px;
+    width: 15px;
+    font-size: 20px;
+}
+.social div{
+    display: grid;
+    grid-template-columns: 20% 20% 40% 20%;
+    margin: 30px 0;
+    
+}
+.fab{
+    height: 15px;
+    width: 15px;
+    font-size: 20px;
+}
+.social div p{
+    font-size: 15px;
+}
+.social div:nth-child(2) i{
+    color: rgb(0, 38, 255);
+}
+.social div:nth-child(3) i{
+    color: rgb(204, 0, 255);
+}
+.social div:nth-child(4) i{
+    color: rgb(0, 119, 255);
+} */
+
+
+
+
+
+
+
+
